@@ -26,13 +26,13 @@ Include CMessage in Anax by adding this lines:
 	
 Simply add the desired messages by adding these lines:
 
-##For error-messages:
+For error-messages:
 	$app->message->addErrorMessage('This is a error-message');
 	
-##For success-messages:
+For success-messages:
 	$app->message->addSuccessMessage('This is a success-message');
 
-##For information-messages:
+For information-messages:
 	$app->message->addInfoMessage('Detta är ett infomeddelande');
 	
 
