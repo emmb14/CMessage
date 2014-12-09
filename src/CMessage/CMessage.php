@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\Message;
+namespace Isa\CMessage;
 
 /**
  * Store a message in session and print it out.
@@ -10,7 +10,7 @@ class CMessage
 {
 
 
-	private $sessionKey;
+	private $sessionKey = NULL;
 	
 	
     
@@ -20,7 +20,7 @@ class CMessage
 	
 	
 	/**
-	 * Add errormessage in the session
+	 * Add message in the session
 	 *
 	 */
 	public function addMessage($message, $type) {
@@ -36,7 +36,7 @@ class CMessage
 	
 	
 	/**
-	 * Add errormessage in the session
+	 * Add errormessage
 	 *
 	 */
 	public function addErrorMessage($message) {
@@ -46,7 +46,7 @@ class CMessage
 	
 	
 	/**
-	 * Add successmessage in the session
+	 * Add successmessage
 	 *
 	 */
 	public function addSuccessMessage($message) {
@@ -56,7 +56,7 @@ class CMessage
 	
 	
 	/**
-	 * Add infomessage in the session
+	 * Add infomessage
 	 *
 	 */
 	public function addInfoMessage($message) {
