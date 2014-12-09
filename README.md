@@ -49,5 +49,6 @@ For example you could place the messages in a variable like this:
 	$messages = $app->message->printMessage();
 	
 and then use this line to print it out on a page:
+	
 	$app->views->addString($messages); 
 
