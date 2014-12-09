@@ -1,0 +1,19 @@
+{
+    "name": "isa/cmessage",    
+    "type": "library",
+    "description": "Class to show flash messages",
+    "keywords": ["message", "flash" ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emma Malmkjell",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "Isa\\": "src/" }
+    }
+}
