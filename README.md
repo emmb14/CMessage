@@ -27,21 +27,27 @@ Include CMessage in Anax by adding this lines:
 Simply add the desired messages by adding these lines:
 
 For error-messages:
+
 	$app->message->addErrorMessage('This is a error-message');
 	
 For success-messages:
+
 	$app->message->addSuccessMessage('This is a success-message');
 
 For information-messages:
+
 	$app->message->addInfoMessage('Detta är ett infomeddelande');
 	
 
 This lines will save the message/messages in the session and when you want to print out the messages call the method printMessage:
+	
 	$app->message->printMessage();
 	
 
 For example you could place the messages in a variable like this:
-	$messages = $app->message->printMessage(); 
+	
+	$messages = $app->message->printMessage();
+	
 and then use this line to print it out on a page:
 	$app->views->addString($messages); 
 
