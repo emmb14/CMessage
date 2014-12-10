@@ -6,11 +6,11 @@ namespace Isa\CMessage;
  * Store a message in session and print it out.
  *
  */
-class CMessage
+class CMessage 
 {
+	use \Anax\DI\TInjectable;
 
-
-	private $sessionKey = NULL;
+	private $sessionKey;
 	
 	
     
@@ -20,23 +20,25 @@ class CMessage
 	
 	
 	/**
-	 * Add message in the session
+	 * Add errormessage in the session
 	 *
 	 */
 	public function addMessage($message, $type) {
-		$messages = $_SESSION[$this->sessionKey];
+		//$messages = $_SESSION[$this->sessionKey];
+		$messages = $this->session->get($this->sessionKey, []);
 		
 		$messages[] = [
 			'message' => $message,
 			'type' => $type,
 		];
 		
-		$_SESSION[$this->sessionKey] = $messages;
+		//$_SESSION[$this->sessionKey] = $messages;
+		$this->session->set($this->sessionKey, $messages);
 	}
 	
 	
 	/**
-	 * Add errormessage
+	 * Add errormessage in the session
 	 *
 	 */
 	public function addErrorMessage($message) {
@@ -46,7 +48,7 @@ class CMessage
 	
 	
 	/**
-	 * Add successmessage
+	 * Add successmessage in the session
 	 *
 	 */
 	public function addSuccessMessage($message) {
@@ -56,7 +58,7 @@ class CMessage
 	
 	
 	/**
-	 * Add infomessage
+	 * Add infomessage in the session
 	 *
 	 */
 	public function addInfoMessage($message) {
@@ -70,7 +72,8 @@ class CMessage
 	 *
 	 */
 	public function printMessage() {
-		$messages = $_SESSION[$this->sessionKey];
+		//$messages = $_SESSION[$this->sessionKey];
+		$messages = $this->session->get($this->sessionKey, []);
 		$html = '';
 		
 		foreach ($messages as $message){
@@ -88,7 +91,8 @@ class CMessage
 	 *
 	 */
 	public function clearSession() {
-		$_SESSION[$this->sessionKey] = NULL;
+		//$_SESSION[$this->sessionKey] = NULL;
+		$this->session->set($this->sessionKey, []);
 	} 
 	 
 }
