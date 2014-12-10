@@ -26,7 +26,6 @@ class CMessage
 	 *
 	 */
 	public function addMessage($message, $type) {
-		//$messages = $_SESSION[$this->sessionKey];
 		$messages = $this->session->get($this->sessionKey, []);
 		
 		$messages[] = [
@@ -34,7 +33,6 @@ class CMessage
 			'type' => $type,
 		];
 		
-		//$_SESSION[$this->sessionKey] = $messages;
 		$this->session->set($this->sessionKey, $messages);
 	}
 	
@@ -74,7 +72,6 @@ class CMessage
 	 *
 	 */
 	public function printMessage() {
-		//$messages = $_SESSION[$this->sessionKey];
 		$messages = $this->session->get($this->sessionKey, []);
 		$html = '';
 		
@@ -93,7 +90,6 @@ class CMessage
 	 *
 	 */
 	public function clearSession() {
-		//$_SESSION[$this->sessionKey] = NULL;
 		$this->session->set($this->sessionKey, []);
 	} 
 	 
