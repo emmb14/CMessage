@@ -18,8 +18,9 @@ How to use in Anax/MVC
 Session must be started before including CMessage.
 
 Include CMessage in Anax by adding this lines:
-	$di->setShared('message', function() {
-		$message = new \Isa\CMessage\CMessage();
+	
+	$di->set('message', function() use ($di) {
+		$message = new \Anax\Message\CMessage($di);
 		return $message;
 	});
 	
