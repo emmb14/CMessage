@@ -53,3 +53,10 @@ and then use this line to print it out on a page:
 	
 	$app->views->addString($messages); 
 
+
+The messages are using icons from Font Awesome.
+If you want to include icons in your messages just download Font Awesome from http://fortawesome.github.io/Font-Awesome/ and place it in your project. Then make the project use the css-file, for example like this:
+
+	$app->theme->addStylesheet('css/font-awesome/css/font-awesome.css');
+
+If you dont want to use the icons the messages will look fine even without them.
