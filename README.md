@@ -2,7 +2,7 @@ CMessage
 ========
 
 Module for session-based Flash Messages. It handels messages for error, success and information.
-The module is build´t to fit with Anax/MVC but can be used outside of Anax too.
+The module is build´t to fit with Anax/MVC.
 
 
 
