@@ -10,12 +10,14 @@ class CMessage
 {
 	use \Anax\DI\TInjectable;
 
-	private $sessionKey;
+	public $sessionKey=null;
 	
 	
     
-	public function __construct(){
+	public function __construct($di){
 		 $this->sessionKey = 'messages';
+		 
+		 $this->di = $di;
 	}
 	
 	
