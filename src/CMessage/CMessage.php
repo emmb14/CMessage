@@ -23,7 +23,10 @@ class CMessage
 	 *
 	 */
 	public function addMessage($message, $type) {
-		$messages = $_SESSION[$this->sessionKey];
+		if (isset($_SESSION[$this->sessionKey]))
+		{
+			$messages = $_SESSION[$this->sessionKey];
+		}
 		
 		$messages[] = [
 			'message' => $message,

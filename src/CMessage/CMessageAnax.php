@@ -26,7 +26,10 @@ class CMessageAnax
 	 *
 	 */
 	public function addMessage($message, $type) {
-		$messages = $this->session->get($this->sessionKey, []);
+		if(!($this->session->get($this->sessionKey, [])) == null)
+		{
+			$messages = $this->session->get($this->sessionKey, []);
+		}
 		
 		$messages[] = [
 			'message' => $message,
