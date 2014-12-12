@@ -6,15 +6,18 @@ namespace Isa\CMessage;
  * Store a message in session and print it out.
  *
  */
-class CMessage 
+class CMessageAnax 
 {
+	use \Anax\DI\TInjectable;
 
 	public $sessionKey=null;
 	
 	
     
-	public function __construct(){
-		$this->sessionKey = 'messages';
+	public function __construct($di){
+		 $this->sessionKey = 'messages';
+		 
+		 $this->di = $di;
 	}
 	
 	
@@ -23,14 +26,14 @@ class CMessage
 	 *
 	 */
 	public function addMessage($message, $type) {
-		$messages = $_SESSION[$this->sessionKey];
+		$messages = $this->session->get($this->sessionKey, []);
 		
 		$messages[] = [
 			'message' => $message,
 			'type' => $type,
 		];
 		
-		$_SESSION[$this->sessionKey] = $messages;
+		$this->session->set($this->sessionKey, $messages);
 	}
 	
 	
@@ -69,7 +72,7 @@ class CMessage
 	 *
 	 */
 	public function printMessage() {
-		$messages = $_SESSION[$this->sessionKey];
+		$messages = $this->session->get($this->sessionKey, []);
 		$html = '';
 		
 		foreach ($messages as $message){
@@ -87,7 +90,7 @@ class CMessage
 	 *
 	 */
 	public function clearSession() {
-		$_SESSION[$this->sessionKey] = NULL;
+		$this->session->set($this->sessionKey, []);
 	} 
 	 
 }

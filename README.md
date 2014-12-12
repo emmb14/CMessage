@@ -1,8 +1,8 @@
 CMessage
 ========
 
-Module for session-based Flash Messages. It handels messages for error, success and information.
-The module is build´t to fit with Anax/MVC.
+Module for session-based Flash Messages that handels messages for error, success and information.
+If you are using Anax/MVC use the class CMessageAnax.
 
 
 
@@ -13,14 +13,21 @@ This software is free software and carries a MIT license.
 
 
 
-How to use in Anax/MVC
+How to use
 ------------------
 Session must be started before including CMessage.
 
-Include CMessage in Anax by adding this lines:
+Include CMessage by adding this lines:
+	
+	$di->set('message', function() {
+		$message = new \Isa\CMessage\CMessage();
+		return $message;
+	});
+
+If you are using Anax/MVC include CMessage with this lines:
 	
 	$di->set('message', function() use ($di) {
-		$message = new \Anax\Message\CMessage($di);
+		$message = new \Isa\CMessage\CMessageAnax($di);
 		return $message;
 	});
 	
