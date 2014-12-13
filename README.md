@@ -1,4 +1,4 @@
-https://travis-ci.org/emmb14/CMessage.svg?branch=master
+![Alt text](https://travis-ci.org/emmb14/CMessage.svg?branch=master)
 
 CMessage
 ========
