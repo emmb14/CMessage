@@ -1,3 +1,5 @@
+https://travis-ci.org/emmb14/CMessage.svg?branch=master
+
 CMessage
 ========
 
